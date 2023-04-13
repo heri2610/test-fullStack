@@ -1,5 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv');
+const cors = require('cors');
 const router = require('./app/routes');
 
 dotenv.config();
@@ -12,7 +13,7 @@ app.use(
     extended: true,
   })
 );
-
+app.use(cors());
 app.use(express.json());
 app.use(router);
 
